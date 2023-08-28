@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container {
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh; */
+    
+}
+
+header {
+    height: 40px;
+    display: flex;
+    background-color: #ffdecb;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 16px;
+    font-size: 20px;
+    color: #4d4d4d;
+}
+
+section {
+    height: 40px;
+    display: flex;
+    background: #FFBF9B;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 40px;
+}
+
+.links {
+    /* text-decoration: none; */
+    color: black;
+    margin-left: 8px;
+    border: 1px solid;
+    border-radius: 15px;
+    height: 20px;
+    padding: 4px;
+}
+
+.links:hover {
+    background: #ffdecb;
+}
+
+#search {
+    margin-left: 300px;
+    padding-right: 3px;
+    border-radius: 15px;
+    border: 1px solid;
+    /* padding: 4px; */
+    height: 20px;
+    background: white;
+}
+
+input {
+    /* border: none;
+    margin-right: 4px;
+    height: 100%;
+    box-sizing: border-box;
+    background: white; */
+}
+
+form.example input[type=text] {
+    margin: 0px;
+    font-size: 17px;
+    float: left;
+    width: 75%;
+    /* height: zpx;  */
+    border: none;
+    margin-right: 4px;
+    height: 100%;
+    box-sizing: border-box;
+    background: white;
+  }
+  
+  form.example button {
+    float: left;
+    height: 100%;
+    width: 20%;
+    padding: 0px;
+    margin: 0px;
+    background: gray;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* form.example::after {
+    content: "";
+    clear: both;
+    /* display: table; */
+  /* } */ 
+
+  main {
+    /* display: flex;
+    flex-wrap: wrap;
+    margin: 12px 30px;
+    flex-grow: 1; */
+    background: #F9F5EB;
+  }
+
+  .current {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    margin: 12px 30px;
+    flex-grow: 1;
+  }
+
+  .product {
+    height: 250px;
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 24px;
+    background: #F9F5EB;
+  }
+
+  .top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    background: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .images {
+    height: 70px;
+    background: white;
+    border-radius: 10px;
+  }
+
+  .bottom {
+    height:25%;
+    padding: 4px;
+    
+    /* border-bottom: 2px solid skyblue; */
+  }
+
+  .buttons {
+    height: 15%;
+    width: 80%;
+    margin-left: 14px;
+    border-top: 2px solid skyblue;
+    padding: 4px 0px;
+  }
+
+  .material-icons{
+    margin-right: 8px;
+  }
+
+  .material-icons:hover{
+    background: #E4DCCF;
+    padding: 4px;
+    border-radius: 50%;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+
+  .page{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  .topPage{
+    display: flex;
+    margin-bottom: 30px;
+    /* box-sizing: border-box; */
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .details {
+    display: flex;
+    height: 500px;
+    border: 2px solid;
+    border-radius: 25px;
+    width: 80%;
+    /* padding: 8px; */
+  }
+
+  .detailImg {
+    flex: 1;
+    height: 500px;
+    /* width: 50%; */
+  }
+
+  .imagePage {
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+  }
+
+  .detail {
+    flex: 1;
+    /* width: 50%; */
+    padding: 16PX;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* h3 {
+    margin-bottom: ;
+  } */
+
+  .editDetail{
+    display: flex;
+    flex-direction: column;
+  }
+  .label{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input {
+    width: 500px;
+    margin: 16px;
+    margin-left: 0px;
+    /* height: 30px; */
+    
+    /* height: fit-content; */
+    /* min-height: max-content; */
+  }
+
+  #editButton {
+    width: 100px;
+  }
+
+
+  
+  footer {
+    align-content: end;
+    background: gray;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
