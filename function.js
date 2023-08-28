@@ -8,7 +8,7 @@ async function fetchData(){
     return data
 } 
 
-const data = await fetchData()
+// const data = await fetchData()
 
 
 function createDOMElement(tagName,  parent, attributes='', textContent='') {
@@ -25,9 +25,7 @@ function createDOMElement(tagName,  parent, attributes='', textContent='') {
 }
 
 function deleteCurrent(){
-    // let current = document.querySelector('.current');
-    // current.remove()
-    const main = document.querySelector('main');
+    // const main = document.querySelector('main');
     const current = document.querySelector('.current');
     if (current) {
         current.remove();
@@ -35,7 +33,8 @@ function deleteCurrent(){
 }
 
 
-export function createCard(category) {
+export async function createCard(category) {
+    const data = await fetchData()
     const main = document.querySelector('main');
     const current = document.querySelector('.current');
     if (current) {
@@ -58,7 +57,7 @@ export function createCard(category) {
             const delete_card = createDOMElement('i', buttons, { 'class': 'material-icons' }, 'delete');
             const edit_card = createDOMElement('i', buttons, { 'class': 'material-icons' }, 'create');
 
-            product.addEventListener('click', () => productPage(pro.id - 1));
+            product.addEventListener('click', () => productPage(pro.id));
 
             delete_card.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -152,8 +151,10 @@ export function editProduct(pro) {
 
 
 
-export function productPage(pro) {
+export async function productPage(pro) {
     deleteCurrent();
+    const data = await fetchData()
+    const current = data.find((prod) => prod.id === pro)
     const main = document.querySelector('main');
     const product = createDOMElement('div', main, {'class': 'current'});
     product.classList.add('page');
@@ -170,34 +171,32 @@ export function productPage(pro) {
 
     const h1 = createDOMElement('h1', text, '', 'Product Page');
 
-    const details = document.createElement('div');
-    product.appendChild(details);
-    details.classList.add('details');
+    const details = createDOMElement('div', product, {'class': 'details'})
 
     const detailsImg = document.createElement('div');
     details.appendChild(detailsImg);
     detailsImg.classList.add('detailImg');
 
-    const images = createDOMElement('img', detailsImg, {'class': 'imagePage', 'src': data[pro].image});
+    const images = createDOMElement('img', detailsImg, {'class': 'imagePage', 'src': current.image});
 
     const detail = document.createElement('div');
     details.appendChild(detail);
     detail.classList.add('detail');
 
     const title = createDOMElement('h3', detail, '', 'title:');
-    const titleDetail = createDOMElement('span', detail, '', data[pro].title);
+    const titleDetail = createDOMElement('span', detail, '', current.title);
 
     const description = createDOMElement('h3', detail, '', 'Description:');
-    const descriptionDetail = createDOMElement('span', detail, '', data[pro].description);
+    const descriptionDetail = createDOMElement('span', detail, '', current.description);
 
     const category = createDOMElement('h3', detail, '', 'Category:');
-    const categoryDetail = createDOMElement('span', detail, '', data[pro].category);
+    const categoryDetail = createDOMElement('span', detail, '', current.category);
 
     const price = createDOMElement('h3', detail, '', 'Price:');
-    const priceDetail = createDOMElement('span', detail, '', data[pro].price);
+    const priceDetail = createDOMElement('span', detail, '', current.price);
 
     const quantity = createDOMElement('h3', detail, '', 'Quantity:');
-    const quantityDetail = createDOMElement('span', detail, '', data[pro].quantity);
+    const quantityDetail = createDOMElement('span', detail, '', current.quantity);
 }
 
 
@@ -244,7 +243,7 @@ export function addProduct() {
         const category = categoryInput.value;
         const price = priceInput.value;
         const image = imageInput.value;
-        const quantity = quantityInput.value;
+        const quantity = +quantityInput.value;
         const description = descriptionInput.value;
         addProductToAPI({
             title,

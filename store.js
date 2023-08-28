@@ -49,7 +49,7 @@ const data = await fetchData()
     jewelery.addEventListener('click', () => {
         let current = document.querySelector('.current');
         current.remove()
-        createCard("jewelery");
+        createCard("jewelry");
     })
 
     let electronics = document.querySelector('#electronics');
